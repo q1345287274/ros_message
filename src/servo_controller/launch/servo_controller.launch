@@ -1,0 +1,13 @@
+<launch>
+    <!-- 加载参数 -->
+    <rosparam file="$(find servo_controller)/config/servo.yaml" command="load" />
+    
+    <!-- 启动伺服控制器节点 -->
+    <node name="servo_controller" pkg="servo_controller" type="servo_controller_node" output="screen">
+        <!-- 网络配置 (本地测试使用回环地址) -->
+        <param name="local_ip" value="127.0.0.1" />
+        <param name="local_port" value="9000" />
+        <param name="remote_ip" value="127.0.0.1" />
+        <param name="remote_port" value="9001" />
+    </node>
+</launch>
