@@ -1,0 +1,23 @@
+# 伺服控制器配置
+
+# 网络配置
+# 本地虚拟机测试配置 (使用回环地址)
+local_ip: "127.0.0.1"       # 上位机IP
+local_port: 9000             # 上位机端口
+remote_ip: "127.0.0.1"      # 执行器IP (测试时指向本机)
+remote_port: 9001            # 执行器端口
+
+# 实际设备配置
+# local_ip: "192.168.1.8"     # 上位机IP
+# local_port: 9000             # 上位机端口
+# remote_ip: "192.168.1.10"   # 执行器IP
+# remote_port: 9001            # 执行器端口
+
+# 话题配置
+control_topic: "/servo_controller/control/raw"
+feedback_raw_topic: "/servo_controller/feedback/raw"
+feedback_angle_topic: "/servo_controller/feedback/angle"
+feedback_status_topic: "/servo_controller/feedback/status"
+
+# 角度反馈比例系数
+angle_scale: 0.01  # 原始数据除以100得到实际角度(度)
